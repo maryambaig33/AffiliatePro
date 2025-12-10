@@ -2,10 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Sparkles } from 'lucide-react';
 import { ChatMessage } from '../types';
 import { getShoppingAdvice } from '../services/geminiService';
-import ReactMarkdown from 'react-markdown'; // Assuming standard text, but if markdown is needed we can render it raw or use a library. For this specific prompt I will render raw or simple text processing to avoid extra deps if possible, but the prompt says use popular libraries. I will skip react-markdown to stay strictly within "handful of files" and no package.json changes request, but I will simulate it with basic line breaks.
-
-// Actually, rendering markdown properly is better. I will assume basic text rendering for simplicity in a single file or use a simple parser if needed. 
-// Given the constraints, I will just render text with whitespace-pre-wrap.
 
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
